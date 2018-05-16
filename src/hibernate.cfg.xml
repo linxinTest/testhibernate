@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+            "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+            "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+ <hibernate-configuration>
+            <session-factory>
+                <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+                <property name="hibernate.connection.url">jdbc:mysql:///hibernate_day01</property>
+<!--  注意用户名要改成你自己的-->
+
+                <property name="hibernate.connection.username">root</property>
+<!--  注意密码要改成你自己的-->
+
+                <property name="hibernate.connection.password">admin</property>
+                <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+                
+                <!-- 显示SQL语句，在控制台显示 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 格式化SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 生成数据库的表结构 
+			update：如果没有表结构，创建表结构。如果存在，不会创建，添加数据
+		-->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+                
+                <!--  注意映射文件的路径要改成你自己的-->
+
+                <mapping resource="com/itheima/testHibernate/domain/Customer.xml"/>
+            </session-factory>
+        </hibernate-configuration>
